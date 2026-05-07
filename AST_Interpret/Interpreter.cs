@@ -48,7 +48,6 @@ public sealed class Interpreter{
             case Token.Type.GREATER_THAN_EQ:
             case Token.Type.NOT_EQUALS:
             case Token.Type.EQUALS:
-            case Token.Type.ASTERISK:
             case Token.Type.SLASH:
             case Token.Type.PERCENT:
                 v1 = calculate_expr(node.sub_nodes[0]);
@@ -61,7 +60,6 @@ public sealed class Interpreter{
                     case Token.Type.NOT_EQUALS:      return new(v1 != v2);
                     case Token.Type.EQUALS:          return new(v1 == v2);
 
-                    case Token.Type.ASTERISK:        return v1 * v2;
                     case Token.Type.SLASH:           return v1 / v2;
                     case Token.Type.PERCENT:         return v1 % v2;
 
